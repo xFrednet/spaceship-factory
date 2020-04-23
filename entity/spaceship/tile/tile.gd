@@ -3,7 +3,6 @@ extends StaticBody2D
 class_name SfTile
 
 func _ready():
-	Logger.info("Hello", self);
 	pass # Replace with function body.
 
 func _get_map() -> SfTileMap:

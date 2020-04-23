@@ -14,11 +14,22 @@ func _ready():
 	self.print_tree_pretty()
 
 # Tiles
-func set_tile(tx : int, ty : int, node):
-	var pos = self.get_world_pos(tx, ty)
-	node.set_position(pos)
+func set_tile(tx : int, ty : int, node : Node2D):
+	self.clear_tile(tx, ty)
+	
+	node.set_position(self.get_world_pos(tx, ty))
 	node.set_name(self._get_tile_name(tx, ty))
 	self.add_child(node)
+	
+func get_tile(tx: int, ty: int):
+	var name = self._get_tile_name(tx, ty)
+	return self.find_node(name, false, true)
+	
+func clear_tile(tx: int, ty: int):
+	var node = self.get_tile(tx, ty)
+	if node != null:
+		self.remove_child(node)
+		node.queue_free()
 
 func _get_tile_name(tx, ty) -> String:
 	return "tile_" + str(tx) + "_" + str(ty)
