@@ -8,9 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "StaticBody2D",
+"class": "SfTile",
+"language": "GDScript",
+"path": "res://entity/spaceship/tile/tile.gd"
+}, {
+"base": "Node2D",
+"class": "SfTileMap",
+"language": "GDScript",
+"path": "res://entity/spaceship/tilemap.gd"
+} ]
 _global_script_class_icons={
-
+"SfTile": "",
+"SfTileMap": ""
 }
 
 [application]
