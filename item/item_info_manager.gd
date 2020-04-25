@@ -2,6 +2,7 @@ extends Node
 
 const ITEM_INFO_DATAFILL_FILE = "res://item/item_info_datafill.txt"
 const NULL_ITEM_INFO_ID = "i:null"
+const TEST_ITEM_INFO_ID = "i:test"
 
 var _items = Dictionary()
 

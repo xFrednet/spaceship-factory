@@ -5,9 +5,14 @@ class_name ItemStack
 var _item_info : ItemInfo setget , get_item_info
 var _item_count : int setget , get_count
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _init(info, count):
+	if info is String:
+		info = ItemInfoManager.get_item_info(info)
+	
+	assert(info != null)
+	_item_info = info
+	assert((count is int) && count > 0)
+	_item_count = count
 
 func get_item_info() -> ItemInfo:
 	return _item_info
