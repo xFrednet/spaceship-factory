@@ -1,0 +1,5 @@
+ID             ,  WEIGHT, TEXTURE_FILE
+i:null         ,   1.000, null.png
+i:duck         ,   7.000, null.png
+i:wood         ,   1.000, null.png
+i:stone        ,   5.000, null.png

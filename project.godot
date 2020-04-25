@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "ItemInfo",
+"language": "GDScript",
+"path": "res://item/item_info.gd"
+}, {
 "base": "StaticBody2D",
 "class": "SfTile",
 "language": "GDScript",
@@ -30,6 +35,7 @@ _global_script_classes=[ {
 "path": "res://addons/WAT/runner/test.gd"
 } ]
 _global_script_class_icons={
+"ItemInfo": "",
 "SfTile": "",
 "SfTileMap": "",
 "WAT": "",
