@@ -28,6 +28,15 @@ func get_weight() -> float:
 func get_texture() -> Texture:
 	return _item_image
 
+################
+# Util
+################
+func can_stack(other) -> bool:
+	return _item_id == other.get_id()
+
+################
+# Internals
+################
 func _parse_info_string(info_string):
 	var parts = info_string.split(",")
 	
