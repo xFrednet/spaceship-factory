@@ -18,11 +18,27 @@ _global_script_classes=[ {
 "class": "SfTileMap",
 "language": "GDScript",
 "path": "res://entity/spaceship/tilemap.gd"
+}, {
+"base": "Reference",
+"class": "WAT",
+"language": "GDScript",
+"path": "res://addons/WAT/runner/namespace.gd"
+}, {
+"base": "Node",
+"class": "WATTest",
+"language": "GDScript",
+"path": "res://addons/WAT/runner/test.gd"
 } ]
 _global_script_class_icons={
 "SfTile": "",
-"SfTileMap": ""
+"SfTileMap": "",
+"WAT": "",
+"WATTest": ""
 }
+
+[WAT]
+
+Test_Directory="res://test"
 
 [application]
 
@@ -33,6 +49,11 @@ config/icon="res://icon.png"
 [autoload]
 
 Logger="*res://util/logger.gd"
+ItemInfoManager="*res://item/item_info_manager.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "WAT" )
 
 [rendering]
 
