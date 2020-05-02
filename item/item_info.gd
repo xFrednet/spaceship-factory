@@ -34,6 +34,9 @@ func get_texture() -> Texture:
 func can_stack(other) -> bool:
 	return _item_id == other.get_id()
 
+func equals(other) -> bool:
+	return _item_id == other.get_id()
+
 ################
 # Internals
 ################
