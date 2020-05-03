@@ -30,9 +30,13 @@ func add_count(count : int) -> void:
 	
 func get_count() -> int:
 	return _item_count
-	
+
+func remove_count(count: int) -> void:
+	_item_count -= count
+	assert(_item_count > 0)
+
 ###################
 # weight
 ###################
-func get_stack_weight() -> float:
+func get_weight() -> float:
 	return _item_count * _item_info.get_weight()
