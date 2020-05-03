@@ -25,6 +25,8 @@ func test_push_stack():
 	
 	storage.push_stack(ItemStack.new(testInfos[0], 5))
 	
+	asserts.is_true(storage.has_stack(testInfos[0]), "Has test return true")
+	asserts.is_false(storage.has_stack(testInfos[1]), "Has test return false")
 	asserts.is_not_null(storage.get_stack_first(), "Filled storage returns not null")
 	asserts.is_not_null(storage.get_stack_by_id(testIDs[0]), "Filled storage finds stack")
 	asserts.is_not_null(storage.get_stack_by_info(testInfos[0]), "Filled storage finds stack")

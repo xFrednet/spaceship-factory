@@ -96,9 +96,6 @@ func get_stack_first() -> ItemStack:
 		var temp = null
 		return temp
 
-func has_item(item_info) -> bool:
-	return get_stack_by_info(item_info) != null
-
 func calc_accepted_count(item_info : ItemInfo) -> int:
 	# Check if the item fits in the slots
 	var storage_stack = get_stack_by_info(item_info)

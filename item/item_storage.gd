@@ -60,9 +60,8 @@ func get_stack_by_info(_item_info: ItemInfo) -> ItemStack:
 #########################
 # Storage Info
 #########################
-func has_item(_item_info) -> bool:
-	assert("Not implemented")
-	return false
+func has_stack(item_info) -> bool:
+	return get_stack_by_info(item_info) != null
 
 func calc_accepted_count(_item_info: ItemInfo) -> int:
 	assert("Not implemented")
