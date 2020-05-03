@@ -63,3 +63,9 @@ func _parse_info_string(info_string):
 
 func get_logger_name() -> String:
 	return "ItemInfo";
+
+################
+# Test Util
+################
+func _test_util_set_weight(weight):
+	_item_weight = weight

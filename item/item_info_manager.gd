@@ -1,8 +1,14 @@
 extends Node
 
 const ITEM_INFO_DATAFILL_FILE = "res://item/item_info_datafill.txt"
-const NULL_ITEM_INFO_ID = "i:null"
-const TEST_ITEM_INFO_ID = "i:test"
+const NULL_ITEM_ID = "i:null"
+const TEST_ITEM_IDS = [
+	"i:test0", "i:test1",
+	"i:test2", "i:test3",
+	"i:test4", "i:test5",
+	"i:test6", "i:test7",
+	"i:test8", "i:test9"
+]
 
 var _items = Dictionary()
 
@@ -14,7 +20,7 @@ func get_item_info(id: String) -> ItemInfo:
 	
 	if item == null:
 		Logger.warn("ItemInfo unavailable: %s" % id, self)
-		return _items.get(NULL_ITEM_INFO_ID)
+		return _items.get(NULL_ITEM_ID)
 	else:
 		return item
 

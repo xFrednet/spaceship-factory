@@ -1,7 +1,7 @@
 extends WAT.Test
 
-var nullID = ItemInfoManager.NULL_ITEM_INFO_ID
-var testID = ItemInfoManager.TEST_ITEM_INFO_ID
+var nullID = ItemInfoManager.NULL_ITEM_ID
+var testID = ItemInfoManager.TEST_ITEM_IDS[0]
 var nullInfo = ItemInfoManager.get_item_info(nullID)
 var testInfo = ItemInfoManager.get_item_info(testID)
 
