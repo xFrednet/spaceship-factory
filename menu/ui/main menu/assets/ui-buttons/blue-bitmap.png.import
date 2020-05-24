@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/blue-bitmap.png-def09fa3b4fbe3b0579c6a41766b978e.res"
+
+[deps]
+
+source_file="res://menu/ui/main menu/assets/ui-buttons/blue-bitmap.png"
+dest_files=[ "res://.import/blue-bitmap.png-def09fa3b4fbe3b0579c6a41766b978e.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5

@@ -1,0 +1,13 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://menu/theme/font/AlphaMaleModern.ttf" type="DynamicFontData" id=1]
+
+[resource]
+size = 50
+outline_size = 2
+outline_color = Color( 0.47451, 0.901961, 0.317647, 1 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_char = 4
+extra_spacing_space = 2
+font_data = ExtResource( 1 )
