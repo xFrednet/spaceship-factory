@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/blue-normal.png" type="Texture" id=1]
+[ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/blue-pressed.png" type="Texture" id=2]
+[ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/blue-hover.png" type="Texture" id=3]
+[ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/blue-dissabled.png" type="Texture" id=4]
+[ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/blue-bitmap.png" type="BitMap" id=5]
+[ext_resource path="res://menu/theme/font/main-menu-button.tres" type="DynamicFont" id=6]
+
+[node name="main-button" type="TextureButton"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 64.0
+margin_top = -92.0
+margin_right = 564.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 500, 94 )
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+action_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
+texture_disabled = ExtResource( 4 )
+texture_focused = ExtResource( 3 )
+texture_click_mask = ExtResource( 5 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 500.0
+margin_bottom = 94.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.458824, 0.458824, 0.458824, 1 )
+text = "Label"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blue-hover.png-52bc02f2944a53139e286982067d941b.stex"
+path="res://.import/blue-hover.png-a2686b22ca21ac6afefd8ae805ae0671.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menu/ui/main menu/assets/ui-buttons/blue-hover.png"
-dest_files=[ "res://.import/blue-hover.png-52bc02f2944a53139e286982067d941b.stex" ]
+source_file="res://menu/ui/main-menu/assets/ui-buttons/blue-hover.png"
+dest_files=[ "res://.import/blue-hover.png-a2686b22ca21ac6afefd8ae805ae0671.stex" ]
 
 [params]
 

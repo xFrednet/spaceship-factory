@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blue-normal.png-90edd7a1d0a7f17fcb2f2c5d5986f60c.stex"
+path="res://.import/blue-normal.png-318b1ea82538d35bbd03470753cdb550.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menu/ui/main menu/assets/ui-buttons/blue-normal.png"
-dest_files=[ "res://.import/blue-normal.png-90edd7a1d0a7f17fcb2f2c5d5986f60c.stex" ]
+source_file="res://menu/ui/main-menu/assets/ui-buttons/blue-normal.png"
+dest_files=[ "res://.import/blue-normal.png-318b1ea82538d35bbd03470753cdb550.stex" ]
 
 [params]
 

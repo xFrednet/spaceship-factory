@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blue-dissabled.png-53870501d28f43c0d7d71ee1b0772841.stex"
+path="res://.import/Game-Title.png-9633d2fc112343bfe4a83125a7603ebb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menu/ui/main-menu/assets/ui-buttons/blue-dissabled.png"
-dest_files=[ "res://.import/blue-dissabled.png-53870501d28f43c0d7d71ee1b0772841.stex" ]
+source_file="res://menu/ui/main-menu/assets/image/Game-Title.png"
+dest_files=[ "res://.import/Game-Title.png-9633d2fc112343bfe4a83125a7603ebb.stex" ]
 
 [params]
 

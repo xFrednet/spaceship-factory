@@ -1,17 +1,18 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://menu/ui/main menu/assets/ui-buttons/blue-dissabled.png" type="Texture" id=1]
-[ext_resource path="res://menu/ui/main menu/assets/ui-buttons/blue-pressed.png" type="Texture" id=2]
-[ext_resource path="res://menu/ui/main menu/assets/ui-buttons/blue-normal.png" type="Texture" id=3]
-[ext_resource path="res://menu/ui/main menu/assets/ui-buttons/blue-hover.png" type="Texture" id=4]
-[ext_resource path="res://menu/ui/main menu/assets/ui-buttons/blue-bitmap.png" type="BitMap" id=5]
-[ext_resource path="res://menu/theme/font/main-menu-button.tres" type="DynamicFont" id=6]
+[ext_resource path="res://menu/ui/main-menu/assets/image/Game-Title.png" type="Texture" id=1]
+[ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/Continue-button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/New-Load-Game-button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/options-button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/statistics-button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/quit-button.tscn" type="PackedScene" id=6]
 
 [node name="main menu" type="Control"]
-anchor_right = 1.875
-anchor_bottom = 1.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -23,174 +24,98 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton2" type="TextureButton" parent="Main menu"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 64.0
-margin_top = -92.0
-margin_right = 564.0
-margin_bottom = 2.0
-focus_mode = 0
-action_mode = 0
-enabled_focus_mode = 0
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 2 )
-texture_hover = ExtResource( 4 )
-texture_disabled = ExtResource( 1 )
-texture_focused = ExtResource( 4 )
-texture_click_mask = ExtResource( 5 )
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 40.0
+margin_right = -40.0
+margin_bottom = -40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1840.0
+margin_bottom = 446.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+margin_right = 1840.0
+margin_bottom = 446.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_right = 1840.0
+margin_bottom = 446.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 1 )
 expand = true
 stretch_mode = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Label" type="Label" parent="Main menu/TextureButton2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 450.0
+margin_right = 1840.0
+margin_bottom = 1000.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_right = 500.0
+margin_bottom = 550.0
+size_flags_vertical = 3
+custom_constants/separation = 20
+alignment = 2
+
+[node name="Continue-button" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+anchor_top = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
 margin_right = 500.0
 margin_bottom = 94.0
-custom_fonts/font = ExtResource( 6 )
-custom_colors/font_color = Color( 0.458824, 0.458824, 0.458824, 1 )
-text = "Continue Game"
-align = 1
-valign = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+size_flags_horizontal = 1
+size_flags_vertical = 1
 
-[node name="TextureButton3" type="TextureButton" parent="Main menu"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 64.0
-margin_top = 20.0
-margin_right = 564.0
-margin_bottom = 114.0
-focus_mode = 0
-action_mode = 0
-enabled_focus_mode = 0
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 2 )
-texture_hover = ExtResource( 4 )
-texture_disabled = ExtResource( 1 )
-texture_focused = ExtResource( 4 )
-texture_click_mask = ExtResource( 5 )
-expand = true
-stretch_mode = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Main menu/TextureButton3"]
+[node name="New-Load-Game-button" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 3 )]
+anchor_top = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 114.0
 margin_right = 500.0
-margin_bottom = 96.0
-custom_fonts/font = ExtResource( 6 )
-custom_colors/font_color = Color( 0.458824, 0.458824, 0.458824, 1 )
-text = "New/Load Game"
-align = 1
-valign = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_bottom = 208.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 
-[node name="TextureButton4" type="TextureButton" parent="Main menu"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 64.0
-margin_top = 134.396
-margin_right = 564.0
-margin_bottom = 228.396
-focus_mode = 0
-action_mode = 0
-enabled_focus_mode = 0
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 2 )
-texture_hover = ExtResource( 4 )
-texture_disabled = ExtResource( 1 )
-texture_focused = ExtResource( 4 )
-texture_click_mask = ExtResource( 5 )
-expand = true
-stretch_mode = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Main menu/TextureButton4"]
+[node name="options-button" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
+anchor_top = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 228.0
 margin_right = 500.0
-margin_bottom = 94.0
-custom_fonts/font = ExtResource( 6 )
-custom_colors/font_color = Color( 0.458824, 0.458824, 0.458824, 1 )
-text = "Options"
-align = 1
-valign = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_bottom = 322.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 
-[node name="TextureButton5" type="TextureButton" parent="Main menu"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 64.0
-margin_top = 244.0
-margin_right = 564.0
-margin_bottom = 338.0
-focus_mode = 0
-action_mode = 0
-enabled_focus_mode = 0
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 2 )
-texture_hover = ExtResource( 4 )
-texture_disabled = ExtResource( 1 )
-texture_focused = ExtResource( 4 )
-texture_click_mask = ExtResource( 5 )
-expand = true
-stretch_mode = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Main menu/TextureButton5"]
+[node name="statistics-button" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 5 )]
+anchor_top = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 342.0
 margin_right = 500.0
-margin_bottom = 94.0
-custom_fonts/font = ExtResource( 6 )
-custom_colors/font_color = Color( 0.458824, 0.458824, 0.458824, 1 )
-text = "Statistics"
-align = 1
-valign = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_bottom = 436.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 
-[node name="TextureButton6" type="TextureButton" parent="Main menu"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 64.0
-margin_top = 356.0
-margin_right = 564.0
-margin_bottom = 450.0
-focus_mode = 0
-action_mode = 0
-enabled_focus_mode = 0
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 2 )
-texture_hover = ExtResource( 4 )
-texture_disabled = ExtResource( 1 )
-texture_focused = ExtResource( 4 )
-texture_click_mask = ExtResource( 5 )
-expand = true
-stretch_mode = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Main menu/TextureButton6"]
+[node name="quit-button" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 6 )]
+anchor_top = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 456.0
 margin_right = 500.0
-margin_bottom = 94.0
-custom_fonts/font = ExtResource( 6 )
-custom_colors/font_color = Color( 0.458824, 0.458824, 0.458824, 1 )
-text = "Quit"
-align = 1
-valign = 1
-autowrap = true
+margin_bottom = 550.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
