@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://menu/theme/font/alpha-male-modern-40.tres" type="DynamicFont" id=1]
+
+[node name="Button" type="Button"]
+margin_top = 123.0
+margin_right = 633.0
+margin_bottom = 169.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.458824, 0.458824, 0.458824, 1 )
+custom_colors/font_color_hover = Color( 0.654902, 0.654902, 0.654902, 1 )
+custom_colors/font_color_pressed = Color( 0.247059, 0.247059, 0.247059, 1 )
+text = "Label"
+flat = true
