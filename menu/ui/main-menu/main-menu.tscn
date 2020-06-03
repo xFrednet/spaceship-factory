@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://menu/ui/main-menu/assets/image/Game-Title.png" type="Texture" id=1]
 [ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/Continue-button.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/options-button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/statistics-button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/quit-button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/blue-normal.png" type="Texture" id=7]
 
 [node name="main menu" type="Control"]
 anchor_right = 1.0
@@ -34,20 +35,20 @@ margin_bottom = -40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+[node name="H-titel" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 1840.0
 margin_bottom = 446.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+[node name="V-titel" type="VBoxContainer" parent="VBoxContainer/H-titel"]
 margin_right = 1840.0
 margin_bottom = 446.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/H-titel/V-titel"]
 margin_right = 1840.0
 margin_bottom = 446.0
 size_flags_horizontal = 3
@@ -56,21 +57,21 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="buttons" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 450.0
 margin_right = 1840.0
 margin_bottom = 1000.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="main buttons" type="VBoxContainer" parent="VBoxContainer/buttons"]
 margin_right = 500.0
 margin_bottom = 550.0
 size_flags_vertical = 3
 custom_constants/separation = 20
 alignment = 2
 
-[node name="Continue-button" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+[node name="Continue-button" parent="VBoxContainer/buttons/main buttons" instance=ExtResource( 2 )]
 anchor_top = 0.0
 anchor_bottom = 0.0
 margin_left = 0.0
@@ -80,7 +81,7 @@ margin_bottom = 94.0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="New-Load-Game-button" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 3 )]
+[node name="New-Load-Game-button" parent="VBoxContainer/buttons/main buttons" instance=ExtResource( 3 )]
 anchor_top = 0.0
 anchor_bottom = 0.0
 margin_left = 0.0
@@ -90,7 +91,7 @@ margin_bottom = 208.0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="options-button" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
+[node name="options-button" parent="VBoxContainer/buttons/main buttons" instance=ExtResource( 4 )]
 anchor_top = 0.0
 anchor_bottom = 0.0
 margin_left = 0.0
@@ -100,7 +101,7 @@ margin_bottom = 322.0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="statistics-button" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 5 )]
+[node name="statistics-button" parent="VBoxContainer/buttons/main buttons" instance=ExtResource( 5 )]
 anchor_top = 0.0
 anchor_bottom = 0.0
 margin_left = 0.0
@@ -110,7 +111,7 @@ margin_bottom = 436.0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="quit-button" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 6 )]
+[node name="quit-button" parent="VBoxContainer/buttons/main buttons" instance=ExtResource( 6 )]
 anchor_top = 0.0
 anchor_bottom = 0.0
 margin_left = 0.0
@@ -119,3 +120,58 @@ margin_right = 500.0
 margin_bottom = 550.0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+
+[node name="V-second-buttons" type="VBoxContainer" parent="VBoxContainer/buttons"]
+margin_left = 504.0
+margin_right = 1840.0
+margin_bottom = 550.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/buttons/V-second-buttons"]
+margin_right = 1336.0
+margin_bottom = 550.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer"]
+margin_right = 1336.0
+margin_bottom = 550.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="V-Topics" type="VBoxContainer" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer"]
+margin_right = 633.0
+margin_bottom = 550.0
+size_flags_vertical = 3
+
+[node name="Background" type="ColorRect" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-Topics"]
+visible = false
+margin_right = 633.0
+margin_bottom = 427.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.0862745, 0.14902, 0.313726, 1 )
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-Topics"]
+margin_right = 633.0
+margin_bottom = 119.0
+action_mode = 0
+texture_normal = ExtResource( 7 )
+
+[node name="Button" type="Button" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-Topics"]
+margin_top = 123.0
+margin_right = 633.0
+margin_bottom = 143.0
+text = "Graphics"
+flat = true
+
+[node name="V-options" type="VBoxContainer" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer"]
+margin_left = 637.0
+margin_right = 1336.0
+margin_bottom = 550.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
