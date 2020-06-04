@@ -12,22 +12,31 @@ func _ready():
 #func _process(delta):
 #	pass
 
-##following a test that schall not pass the final
-#func _on_optionsbutton_button_down():
-#	set_visible(1) 
-#	pass # Replace with function body.
 
 
-#func _on_optionsbutton_button_up():
-#	set_visible(0)
-#	pass # Replace with function body.
-func if():
-	_on_optionsbutton_toggled(button_pressed):
-	set_visible(1)
-	else()
-	set_visible(0)
-	break
+
+func _on_optionsbutton_pressed():
+	set_visible(!
+	visible)
 	pass # Replace with function body.
 
 
 
+func _on_Continuebutton_pressed():
+	set_visible(0)
+	pass # Replace with function body.
+
+
+func _on_NewLoadGamebutton_pressed():
+	set_visible(0)
+	pass # Replace with function body.
+
+
+func _on_statisticsbutton_pressed():
+	set_visible(0)
+	pass # Replace with function body.
+
+
+func _on_quitbutton_pressed():
+	set_visible(0)
+	pass # Replace with function body.
