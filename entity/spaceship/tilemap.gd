@@ -10,8 +10,11 @@ func _ready():
 	self.set_tile(0, 0, tile.instance())
 	self.set_tile(1, 1, tile.instance())
 	self.set_tile(0, 3, tile.instance())
-	self.set_tile(4, 2, tile.instance())
-	self.print_tree_pretty()
+	self.set_tile(4, 4, tile.instance())
+	self.set_tile(5, 4, tile.instance())
+	self.set_tile(6, 4, tile.instance())
+	self.set_tile(7, 4, tile.instance())
+	# self.print_tree_pretty()
 
 # Tiles
 func set_tile(tx : int, ty : int, node : Node2D):
