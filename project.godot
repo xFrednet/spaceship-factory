@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://item/item_storage.gd"
 }, {
+"base": "RigidBody2D",
+"class": "Meteoroid",
+"language": "GDScript",
+"path": "res://entity/meteoroid/meteoroid.gd"
+}, {
 "base": "StaticBody2D",
 "class": "SfTile",
 "language": "GDScript",
@@ -59,6 +64,7 @@ _global_script_class_icons={
 "ItemInfo": "",
 "ItemStack": "",
 "ItemStorage": "",
+"Meteoroid": "",
 "SfTile": "",
 "SfTileMap": "",
 "Spaceship": "",
