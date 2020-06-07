@@ -5,4 +5,6 @@
 [node name="sound-button" index="0" instance=ExtResource( 1 )]
 margin_top = 122.05
 margin_bottom = 168.05
+
+[node name="Label" parent="." index="0"]
 text = "Sound"

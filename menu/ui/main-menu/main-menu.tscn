@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://menu/ui/main-menu/assets/image/Game-Title.png" type="Texture" id=1]
 [ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/Continue-button.tscn" type="PackedScene" id=2]
@@ -11,12 +11,7 @@
 [ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/statistics-button.gd" type="Script" id=9]
 [ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/quit-button.tscn" type="PackedScene" id=10]
 [ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/quit-button.gd" type="Script" id=11]
-[ext_resource path="res://menu/ui/main-menu/V-options-Topics.gd" type="Script" id=12]
-[ext_resource path="res://menu/ui/main-menu/assets/options-image-v2.png" type="Texture" id=13]
-[ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/Options/graphics-button.tscn" type="PackedScene" id=14]
-[ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/Options/sound-button.tscn" type="PackedScene" id=15]
-[ext_resource path="res://menu/ui/main-menu/assets/ui-buttons/Options/controls-button.tscn" type="PackedScene" id=16]
-[ext_resource path="res://menu/theme/font/main-menu-button.tres" type="DynamicFont" id=17]
+[ext_resource path="res://menu/ui/main-menu/second-menu.tscn" type="PackedScene" id=12]
 
 [node name="main menu" type="Control"]
 anchor_right = 1.0
@@ -136,138 +131,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 11 )
 
-[node name="V-second-buttons" type="VBoxContainer" parent="VBoxContainer/buttons"]
-margin_left = 504.0
-margin_right = 1840.0
-margin_bottom = 550.0
-size_flags_horizontal = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/buttons/V-second-buttons"]
-margin_right = 1336.0
-margin_bottom = 550.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer"]
-margin_right = 1336.0
-margin_bottom = 550.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-columns = 2
-
-[node name="V-options-Topics" type="VBoxContainer" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer"]
-margin_right = 149.0
-margin_bottom = 550.0
-size_flags_horizontal = 2
-size_flags_vertical = 3
-alignment = 1
-script = ExtResource( 12 )
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-options-Topics"]
-margin_right = 149.0
-margin_bottom = 550.0
-size_flags_vertical = 3
-texture = ExtResource( 13 )
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-options-Topics/TextureRect"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_top = -89.0
-margin_right = 185.0
-margin_bottom = 89.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 20
-alignment = 1
-
-[node name="Graphics" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-options-Topics/TextureRect/VBoxContainer" instance=ExtResource( 14 )]
-margin_top = 0.0
-margin_right = 185.0
-margin_bottom = 46.0
-
-[node name="sound-button" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-options-Topics/TextureRect/VBoxContainer" instance=ExtResource( 15 )]
-margin_top = 66.0
-margin_right = 185.0
-margin_bottom = 112.0
-
-[node name="controls-button" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-options-Topics/TextureRect/VBoxContainer" instance=ExtResource( 16 )]
-margin_top = 132.0
-margin_right = 185.0
-margin_bottom = 178.0
-
-[node name="V-options" type="VBoxContainer" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer"]
-visible = false
-margin_left = 670.0
-margin_right = 1336.0
-margin_bottom = 550.0
-grow_horizontal = 0
-grow_vertical = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="V-graphics-options" type="VBoxContainer" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-options"]
-visible = false
-margin_right = 1147.0
-margin_bottom = 273.0
-grow_horizontal = 0
-grow_vertical = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="V-sound-options" type="VBoxContainer" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-options"]
-margin_right = 666.0
-margin_bottom = 550.0
-grow_horizontal = 0
-grow_vertical = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-options/V-sound-options"]
-margin_right = 666.0
-margin_bottom = 50.0
-custom_fonts/font = ExtResource( 17 )
-custom_colors/font_color = Color( 0.458824, 0.458824, 0.458824, 1 )
-text = "Sound"
-align = 1
-
-[node name="VScrollBar" type="VScrollBar" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-options/V-sound-options"]
-margin_top = 54.0
-margin_right = 20.0
-margin_bottom = 550.0
-rect_min_size = Vector2( 20, 0 )
-size_flags_vertical = 3
-
-[node name="VSplitContainer" type="VSplitContainer" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-options/V-sound-options/VScrollBar"]
-margin_left = 19.0
-margin_top = 2.0
-margin_right = 1147.0
-margin_bottom = 496.0
-mouse_filter = 1
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="OptionButton" type="OptionButton" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-options/V-sound-options/VScrollBar/VSplitContainer"]
-margin_right = 1128.0
-margin_bottom = 20.0
-
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-options/V-sound-options/VScrollBar/VSplitContainer"]
-margin_top = 32.0
-margin_right = 1128.0
-margin_bottom = 494.0
-
-[node name="CheckButton" type="CheckButton" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-options/V-sound-options/VScrollBar/VSplitContainer"]
-margin_right = 76.0
-margin_bottom = 40.0
-
-[node name="V-controls-options" type="VBoxContainer" parent="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-options"]
-visible = false
-margin_top = 277.0
-margin_right = 1147.0
-margin_bottom = 550.0
-grow_horizontal = 0
-grow_vertical = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="V-second-buttons" parent="VBoxContainer/buttons" instance=ExtResource( 12 )]
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 anchor_top = 1.0
@@ -287,8 +151,3 @@ margin_right = 1880.0
 margin_bottom = 31.0
 text = "Space Ship Factory
 Version 0.0.1"
-[connection signal="pressed" from="VBoxContainer/buttons/main buttons/Continue-button" to="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-options-Topics" method="_on_Continuebutton_pressed"]
-[connection signal="pressed" from="VBoxContainer/buttons/main buttons/New-Load-Game-button" to="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-options-Topics" method="_on_NewLoadGamebutton_pressed"]
-[connection signal="pressed" from="VBoxContainer/buttons/main buttons/options-button" to="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-options-Topics" method="_on_optionsbutton_pressed"]
-[connection signal="pressed" from="VBoxContainer/buttons/main buttons/statistics-button" to="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-options-Topics" method="_on_statisticsbutton_pressed"]
-[connection signal="pressed" from="VBoxContainer/buttons/main buttons/quit-button" to="VBoxContainer/buttons/V-second-buttons/HBoxContainer/GridContainer/V-options-Topics" method="_on_quitbutton_pressed"]
