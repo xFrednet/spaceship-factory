@@ -12,3 +12,4 @@ custom_colors/font_color_hover = Color( 0.654902, 0.654902, 0.654902, 1 )
 custom_colors/font_color_pressed = Color( 0.247059, 0.247059, 0.247059, 1 )
 text = "Label"
 flat = true
+align = 0
