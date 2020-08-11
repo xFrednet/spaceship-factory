@@ -8,6 +8,13 @@ func _ready():
 	
 	pass # Replace with function body.
 
+func _unhandled_key_input(event):
+	if (Input.is_action_just_pressed("debug_spawn_meteoroid")):
+		var met = load("res://entity/meteoroid/simple_meteoroid/simple_meteoroid.tscn").instance()
+		met.set_position(Vector2(400, 64))
+		$meteoroids.add_child(met)
+	pass
+
 func add_spaceship(spaceship : Spaceship) -> void:
 	add_child(spaceship)
 

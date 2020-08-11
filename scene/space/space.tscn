@@ -4,3 +4,11 @@
 
 [node name="space" type="Node2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="meteoroids" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}

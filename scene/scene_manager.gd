@@ -13,8 +13,7 @@ func _ready() -> void:
 	pass
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("swap_scene"):
-		print(get_child_count())
+	if Input.is_action_just_pressed("debug_swap_scene"):
 		var scene = get_child(0)
 		remove_child(scene) # The scene instance is keep by the scene_list
 		
