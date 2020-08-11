@@ -3,7 +3,7 @@ extends RigidBody2D
 class_name Meteoroid
 
 var health : float = 1.0
-export(float, 1.0, 1000.0) var max_health : float = 1.0
+export(float, 10.0, 10000.0) var max_health : float = 10.0
 export(String) var loot_table_entry : String = "loot:meteoroid.x"
 export(String) var name_key : String = "m:"
 
@@ -47,13 +47,14 @@ func _on_meteoroid_collision(other: Node, force : Vector2) -> void:
 func deal_damage(damage: float) -> void:
 	health -= damage
 	if (health <= 0.0):
-		_die()
+		_destruction()
 
-func _die() -> void:
-	print("TODO Meteoroid._die()")
+func _destruction() -> void:
+	
+	# TODO frist 11.08.2020: Drop ressources on destcruction #34
+	
 	get_parent().remove_child(self)
 	self.queue_free()
-	pass
 
 func get_max_health() -> float:
 	return max_health
