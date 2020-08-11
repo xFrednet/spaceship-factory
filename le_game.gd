@@ -1,6 +1,6 @@
 extends Node
 
-const CLIENT_ENTRY_SCENE = "res://scene/station/station.tscn"
+const CLIENT_ENTRY_SCENE = "res://scene/scene_manager.tscn"
 
 func _ready():
 	Logger.info("Entered entry scene", self)
