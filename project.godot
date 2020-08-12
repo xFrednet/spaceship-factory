@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://item/storage/common_storage.gd"
 }, {
+"base": "RigidBody2D",
+"class": "ItemEntity",
+"language": "GDScript",
+"path": "res://entity/item_entity.gd"
+}, {
+"base": "Node2D",
+"class": "ItemEntitySpawner",
+"language": "GDScript",
+"path": "res://entity/item_entity_spawner.gd"
+}, {
 "base": "Resource",
 "class": "ItemInfo",
 "language": "GDScript",
@@ -61,6 +71,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "CommonStorage": "",
+"ItemEntity": "",
+"ItemEntitySpawner": "",
 "ItemInfo": "",
 "ItemStack": "",
 "ItemStorage": "",

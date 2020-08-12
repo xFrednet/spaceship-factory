@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scene/space/space.gd" type="Script" id=1]
+[ext_resource path="res://entity/item_entity_spawner.gd" type="Script" id=2]
 
 [node name="space" type="Node2D"]
 script = ExtResource( 1 )
@@ -12,3 +13,8 @@ __meta__ = {
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="ItemEntitySpawner" type="Node2D" parent="."]
+position = Vector2( 57, 382 )
+script = ExtResource( 2 )
+_item_id = "i:duck"
