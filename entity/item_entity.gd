@@ -2,6 +2,7 @@ extends RigidBody2D
 class_name ItemEntity
 
 const COLLISION_RADIUS = 8.0
+const DESPAWN_TIMER = 100.0
 
 var _item_stack : ItemStack
 
@@ -19,4 +20,6 @@ func _init(item_stack: ItemStack) -> void:
 	shape.set_radius(COLLISION_RADIUS)
 	collision.set_shape(shape)
 	add_child(collision)
+	
+	add_child(DespawnTimer.new(DESPAWN_TIMER))
 

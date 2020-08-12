@@ -9,7 +9,7 @@ export(int, 1, 100) var _count : int = 1
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	var item_stack = ItemStack.new(_item_id, _count)
 	var item_entity = ItemEntity.new(item_stack)
 	item_entity.set_position(self.get_position())
