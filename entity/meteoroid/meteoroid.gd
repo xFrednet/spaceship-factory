@@ -9,17 +9,23 @@ export(String) var name_key : String = "m:"
 
 var _last_linear_velocity : Vector2 = Vector2(0, 0) 
 
+func _init() -> void:
+	set_meta(ComponentStatic.HEALTH_COMPONENT, HealthComponent.new(self, 100.0))
+	set_meta(ComponentStatic.METEOROID_COLLISION_COMPONENT, MeteoroidCollisionComponent.new(self, 0.5, 0.5))
+	ComponentStatic.call_create_links(self)
+
 func _ready():
 	health = max_health
 	
 	# Enable contact monitor
 	set_contact_monitor(true)
 	set_max_contacts_reported(1)
-	connect("body_entered", self, "_body_entered")
+	var err = connect("body_entered", self, "_body_entered")
+	assert(err == OK)
 	
 	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	self._last_linear_velocity = self.linear_velocity
 
 # _on_meteoroid_collision is called by the meteoroid with the collision force. 
@@ -30,37 +36,16 @@ func _body_entered(other: Node) -> void:
 	if self.is_queued_for_deletion():
 		return
 	
-	if (other.has_method("_on_meteoroid_collision")):
-		var lost_velocity = self._last_linear_velocity - self.linear_velocity
-		var force = lost_velocity * self.weight
-		other._on_meteoroid_collision(self, force)
-	pass
-
-func _on_meteoroid_collision(other: Node, force : Vector2) -> void:
-	if self.is_queued_for_deletion():
-		return
+	# Calculate the force
+	var lost_velocity = self._last_linear_velocity - self.linear_velocity
+	var force = lost_velocity * self.weight
 	
-	var damage = force.length()
-	self.deal_damage(damage / 2)
-	other.deal_damage(damage / 2)
-
-func deal_damage(damage: float) -> void:
-	health -= damage
-	if (health <= 0.0):
-		_destruction()
-
-func _destruction() -> void:
-	
-	# TODO frist 11.08.2020: Drop ressources on destcruction #34
-	
-	get_parent().remove_child(self)
-	self.queue_free()
-
-func get_max_health() -> float:
-	return max_health
-
-func get_health() -> float:
-	return health
+	# Collision
+	var collision_com = other.get_meta(ComponentStatic.METEOROID_COLLISION_COMPONENT)
+	if (collision_com != null):
+		collision_com.on_meteoroid_collision(self, force)
+	else:
+		assert(false)
 
 func get_loot_table_key() -> String:
 	return loot_table_entry
