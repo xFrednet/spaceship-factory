@@ -14,10 +14,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://item/storage/common_storage.gd"
 }, {
+"base": "Reference",
+"class": "ComponentBase",
+"language": "GDScript",
+"path": "res://entity/component/component_base.gd"
+}, {
 "base": "Timer",
 "class": "DespawnTimer",
 "language": "GDScript",
 "path": "res://entity/despawn_timer.gd"
+}, {
+"base": "ComponentBase",
+"class": "HealthComponent",
+"language": "GDScript",
+"path": "res://entity/component/health_component.gd"
 }, {
 "base": "RigidBody2D",
 "class": "ItemEntity",
@@ -76,7 +86,9 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "CommonStorage": "",
+"ComponentBase": "",
 "DespawnTimer": "",
+"HealthComponent": "",
 "ItemEntity": "",
 "ItemEntitySpawner": "",
 "ItemInfo": "",
@@ -105,6 +117,7 @@ config/icon="res://icon.png"
 Logger="*res://util/logger.gd"
 GameData="*res://util/game_data.gd"
 ItemInfoManager="*res://item/item_info_manager.gd"
+ComponentStatic="*res://entity/component/component_static.gd"
 
 [debug]
 
