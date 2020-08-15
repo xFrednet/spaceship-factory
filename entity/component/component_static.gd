@@ -1,7 +1,7 @@
 extends Node
 
-const OBJECT_HEALTH_COMPONENT     = "HealthComponent"
-const METEOROID_COLLIDE_COMPONENT = "meteoroid_collide_component"
+const HEALTH_COMPONENT                 = "HealthComponent"
+const METEOROID_COLLISION_COMPONENT    = "MeteoroidCollisionComponent"
 
 # This method calls create_links on all components in the nodes metadata see
 # BaseComponent.create_links for further information
