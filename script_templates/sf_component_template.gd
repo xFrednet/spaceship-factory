@@ -1,6 +1,6 @@
 extends ComponentBase
 
-class_name TODO
+# class_name TODO
 
 # values
 

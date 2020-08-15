@@ -79,11 +79,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://entity/spaceship/spaceship.gd"
 }, {
-"base": "ComponentBase",
-"class": "TODO",
-"language": "GDScript",
-"path": "res://script_templates/sf_component_template.gd"
-}, {
 "base": "Reference",
 "class": "WAT",
 "language": "GDScript",
@@ -109,7 +104,6 @@ _global_script_class_icons={
 "SfTile": "",
 "SfTileMap": "",
 "Spaceship": "",
-"TODO": "",
 "WAT": "",
 "WATTest": ""
 }
