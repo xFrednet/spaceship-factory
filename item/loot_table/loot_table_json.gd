@@ -19,6 +19,8 @@ class_name LootTableJSON
 #     }
 # }
 
+const ROOT_NAME = "loot_tables"
+
 const POOL_NAME      = "name"
 const POOL_ENTRIES   = "entries"
 

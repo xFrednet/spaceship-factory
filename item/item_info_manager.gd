@@ -1,13 +1,13 @@
 extends Node
 
-const ITEM_INFO_DATAFILL_FILE = "res://item/item_info_datafill.txt"
-const NULL_ITEM_ID = "i:null"
+const ITEM_INFO_DATAFILL_FILE = "res://resource_pack/spaceship_factory/item_info_datafill.txt"
+const NULL_ITEM_ID = "sf:item:null"
 const TEST_ITEM_IDS = [
-	"i:test0", "i:test1",
-	"i:test2", "i:test3",
-	"i:test4", "i:test5",
-	"i:test6", "i:test7",
-	"i:test8", "i:test9"
+	"sf:item:test0", "sf:item:test1",
+	"sf:item:test2", "sf:item:test3",
+	"sf:item:test4", "sf:item:test5",
+	"sf:item:test6", "sf:item:test7",
+	"sf:item:test8", "sf:item:test9"
 ]
 
 var _items = Dictionary()

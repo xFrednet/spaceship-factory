@@ -1,0 +1,29 @@
+{
+    "loot_tables": {
+        "iron_meteoroid_destruction": [
+            {
+                "name": "default",
+                "entries": [
+                    {
+                        "type": "item",
+                        "content_id": "sf:item:iron_ore",
+                        "chance": 1,
+                        "count_matrix": [
+                            0.5, 1,
+                            0.3, 2,
+                            0.2, 3
+                        ]
+                    },
+                    {
+                        "type": "item",
+                        "content_id": "sf:item:iron_nugget",
+                        "chance": 0.25,
+                        "count_matrix": [
+                            1, 1
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

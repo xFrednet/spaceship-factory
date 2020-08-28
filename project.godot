@@ -129,6 +129,7 @@ config/icon="res://icon.png"
 Logger="*res://util/logger.gd"
 GameData="*res://util/game_data.gd"
 ItemInfoManager="*res://item/item_info_manager.gd"
+LootTableManager="*res://item/loot_table_manager.gd"
 ComponentStatic="*res://entity/component/component_static.gd"
 
 [debug]
