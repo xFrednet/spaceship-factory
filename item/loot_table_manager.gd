@@ -1,5 +1,7 @@
 extends Node
 
+const MAX_LOOT_TABLE_ITERATIONS = 8
+
 const ENTRY_TYPE_ITEM = "item"
 const ENTRY_TYPE_LOOT_TABLE = "loot_table"
 
@@ -11,6 +13,88 @@ var _loot_tables = {}
 func _ready():
 	load_loot_tables(DEFAULT_NAMESPACE, DEFAULT_FILE)
 	Logger.info("Init() is done", self)
+
+func get_loot_table_item_stacks(loot_table_id: String, iteration: int = 0) -> Array:
+	if iteration < MAX_LOOT_TABLE_ITERATIONS:
+		return []
+	
+	var split = loot_table_id.split(":", true, 1)
+	if split.size() != 2:
+		Logger.warn("The loot_table '%s' has no namespace" % [loot_table_id], self)
+		return []
+	
+	var namespace = split[0]
+	var loot_tables = _loot_tables.get(namespace, null)
+	if loot_tables == null:
+		Logger.warn("The loot_table namespace '%s' for '%s' could not be found" % [namespace, loot_table_id], self)
+		return []
+	
+	var loot_table = loot_tables.get(split[1], null)
+	if loot_table == null:
+		Logger.warn("The loot_table '%s' could not be found in the namespace '%s'" % [split[1], namespace], self)
+		return []
+	
+	return _get_pool_item_stacks(loot_table, iteration, loot_table_id)
+
+func _get_pool_item_stacks(pools: Array, iteration: int, info_str: String) -> Array:
+	
+	var items = []
+	
+	for pool in pools:
+		# TODO xFrednet 2020.08.29: Add pool conditions #48
+		# Note: It's always true for now
+		for entry in pool[LootTableJSON.POOL_ENTRIES]:
+			info_str = info_str + "." + pool[LootTableJSON.POOL_NAME]
+			var entry_items = _get_pool_entry_item_stacks(entry, iteration, info_str)
+			for item in entry_items:
+				items.append(item)
+	
+	return items
+
+func _get_pool_entry_item_stacks(entry: Dictionary, iteration: int, info_str: String) -> Array:
+	# "type": ("item"|"loot_table"),
+	# "content_id": (<item_name>|<loot_table_id>),
+	# "chance": (0.0-1.0),
+	# "count_matrix": [<chance>, <count>]
+	var role = randf()
+	if !(role < entry[LootTableJSON.ENTRY_CHANCE]):
+		return []
+	
+	if entry[LootTableJSON.ENTRY_TYPE] == ENTRY_TYPE_ITEM:
+		# ItemInfo
+		var item_id = entry[LootTableJSON.ENTRY_CONTENT_ID]
+		var item_info = ItemInfoManager.get_item_info(item_id)
+		if (item_info == null):
+			Logger.warn("[%s] The item info for the ID '%s' could not be found" % [info_str, item_id], self)
+			return [] 
+		
+		var count_matrix = entry[LootTableJSON.ENTRY_COUNT_MATRIX]
+		var count_role = randf()
+		for chance_index in range(0, count_matrix.size(), 2):
+			if (count_role < count_matrix[chance_index]):
+				# Out of bounds check
+				var count_index = chance_index + 1
+				if (count_index >= count_matrix.size()):
+					Logger.warn("[%s] The count matrix for the item '%s' has no item_count for the chance" % [info_str, item_id], self)
+					return []
+				
+				# count
+				var count = count_matrix[count_index]
+				if count == 0:
+					Logger.warn("[%s] The count in the count_matrix for the item '%s' is 0" % [info_str, item_id], self)
+					return []
+					
+				return [ItemStack.new(item_info, count)]
+		
+		Logger.warn("[%s] The count_matrix for '%s' didn't catch the role of '%0.3f'" % [info_str, item_id, count_role], self)
+		return []
+		
+	elif entry[LootTableJSON.ENTRY_TYPE] == ENTRY_TYPE_LOOT_TABLE:
+		var loot_table_id = entry[LootTableJSON.ENTRY_CONTENT_ID]
+		return get_loot_table_item_stacks(loot_table_id, iteration + 1)
+	
+	Logger.warn("[%s] The entry content could not be determined" % info_str, self)
+	return []
 
 func load_loot_tables(namespace : String, file_path : String):
 	var file = File.new()
