@@ -15,7 +15,7 @@ func _ready():
 	Logger.info("Init() is done", self)
 
 func get_loot_table_item_stacks(loot_table_id: String, iteration: int = 0) -> Array:
-	if iteration < MAX_LOOT_TABLE_ITERATIONS:
+	if iteration >= MAX_LOOT_TABLE_ITERATIONS:
 		return []
 	
 	var split = loot_table_id.split(":", true, 1)
@@ -46,6 +46,7 @@ func _get_pool_item_stacks(pools: Array, iteration: int, info_str: String) -> Ar
 		for entry in pool[LootTableJSON.POOL_ENTRIES]:
 			info_str = info_str + "." + pool[LootTableJSON.POOL_NAME]
 			var entry_items = _get_pool_entry_item_stacks(entry, iteration, info_str)
+			print(entry)
 			for item in entry_items:
 				items.append(item)
 	
@@ -71,7 +72,7 @@ func _get_pool_entry_item_stacks(entry: Dictionary, iteration: int, info_str: St
 		var count_matrix = entry[LootTableJSON.ENTRY_COUNT_MATRIX]
 		var count_role = randf()
 		for chance_index in range(0, count_matrix.size(), 2):
-			if (count_role < count_matrix[chance_index]):
+			if (count_role <= count_matrix[chance_index]):
 				# Out of bounds check
 				var count_index = chance_index + 1
 				if (count_index >= count_matrix.size()):
@@ -79,13 +80,15 @@ func _get_pool_entry_item_stacks(entry: Dictionary, iteration: int, info_str: St
 					return []
 				
 				# count
-				var count = count_matrix[count_index]
+				var count = int(count_matrix[count_index])
 				if count == 0:
 					Logger.warn("[%s] The count in the count_matrix for the item '%s' is 0" % [info_str, item_id], self)
 					return []
 					
 				return [ItemStack.new(item_info, count)]
-		
+			else:
+				count_role -= count_matrix[chance_index]
+			
 		Logger.warn("[%s] The count_matrix for '%s' didn't catch the role of '%0.3f'" % [info_str, item_id, count_role], self)
 		return []
 		
