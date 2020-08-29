@@ -14,6 +14,15 @@ func _ready():
 	load_loot_tables(DEFAULT_NAMESPACE, DEFAULT_FILE)
 	Logger.info("Init() is done", self)
 
+func get_loot_table_item_entities(loot_table_id: String):
+	var stacks = get_loot_table_item_stacks(loot_table_id)
+	var entites = []
+	
+	for stack in stacks:
+		entites.append(ItemEntity.new(stack))
+		
+	return entites
+
 func get_loot_table_item_stacks(loot_table_id: String, iteration: int = 0) -> Array:
 	if iteration >= MAX_LOOT_TABLE_ITERATIONS:
 		return []
