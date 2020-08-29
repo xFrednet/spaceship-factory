@@ -87,12 +87,12 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "WAT",
 "language": "GDScript",
-"path": "res://addons/WAT/runner/namespace.gd"
+"path": "res://addons/WAT/namespace.gd"
 }, {
-"base": "Node",
+"base": "",
 "class": "WATTest",
 "language": "GDScript",
-"path": "res://addons/WAT/runner/test.gd"
+"path": "res://addons/WAT/core/test/test.gd"
 } ]
 _global_script_class_icons={
 "CommonStorage": "",
@@ -116,6 +116,15 @@ _global_script_class_icons={
 
 [WAT]
 
+Results_Directory="res://test/results/WAT"
+Minimize_Window_When_Running_Tests=false
+TestStrategy={
+"repeat": 1,
+"script": "res://test/item/test_loot_table_manager.gd",
+"strategy": "RunScript"
+}
+Tags=PoolStringArray(  )
+Display=8
 Test_Directory="res://test"
 
 [application]
