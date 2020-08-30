@@ -20,6 +20,8 @@ func _init(item_stack: ItemStack) -> void:
 	shape.set_radius(COLLISION_RADIUS)
 	collision.set_shape(shape)
 	add_child(collision)
+	set_collision_layer(CollisionStatic.ITEM_LAYER)
+	set_collision_mask(CollisionStatic.ITEM_MASK)
 	
 	add_child(DespawnTimer.new(DESPAWN_TIMER))
 

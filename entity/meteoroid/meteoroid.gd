@@ -10,8 +10,12 @@ export(String) var name_key : String = "m:"
 var _last_linear_velocity : Vector2 = Vector2(0, 0) 
 
 func _init() -> void:
+	set_collision_layer(CollisionStatic.METEOROID_LAYER)
+	set_collision_mask(CollisionStatic.METEOROID_MASK)
+	
 	set_meta(ComponentStatic.HEALTH_COMPONENT, HealthComponent.new(self, 100.0))
 	set_meta(ComponentStatic.METEOROID_COLLISION_COMPONENT, MeteoroidCollisionComponent.new(self, 0.5, 0.5))
+	set_meta(ComponentStatic.DESTRUCTION_COMPONENT, DestructionComponent.new(self, "sf:loot:meteoroid_destruction"))
 	ComponentStatic.call_create_links(self)
 
 func _ready():
@@ -45,7 +49,7 @@ func _body_entered(other: Node) -> void:
 	if (collision_com != null):
 		collision_com.on_meteoroid_collision(self, force)
 	else:
-		assert(false)
+		pass
 
 func get_loot_table_key() -> String:
 	return loot_table_entry

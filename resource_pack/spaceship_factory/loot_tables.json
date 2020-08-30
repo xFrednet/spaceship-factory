@@ -1,12 +1,12 @@
 {
     "loot_tables": {
-        "iron_meteoroid_destruction": [
+        "loot:meteoroid_destruction": [
             {
                 "name": "default",
                 "entries": [
                     {
                         "type": "item",
-                        "content_id": "sf:item:iron_ore",
+                        "content_id": "sf:item:stone",
                         "chance": 1,
                         "count_matrix": [
                             0.5, 1,
@@ -16,10 +16,27 @@
                     },
                     {
                         "type": "item",
-                        "content_id": "sf:item:iron_nugget",
+                        "content_id": "sf:item:iron_ore",
                         "chance": 0.25,
                         "count_matrix": [
                             1, 1
+                        ]
+                    }
+                ]
+            }
+        ],
+        "loot:tile_destruction": [
+            {
+                "name": "default",
+                "entries": [
+                    {
+                        "type": "item",
+                        "content_id": "sf:item:scrap",
+                        "chance": 1,
+                        "count_matrix": [
+                            0.5, 1,
+                            0.3, 2,
+                            0.2, 3
                         ]
                     }
                 ]
